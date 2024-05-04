@@ -3,15 +3,19 @@ import joblib
 import numpy as np
 
 app = Flask(__name__)
-model = joblib.load('heart_attack_prediction_model.pkl')
+
+
 
 @app.route('/')
 def home():
-    return render_template('templets/index.html')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
+        model_name = request.form['model']
+        model_path = f'model/{model_name}-model.pkl'
+        model = joblib.load(model_path)
         age = float(request.form['age'])
         sex = float(request.form['sex'])
         cp = float(request.form['cp'])
@@ -34,7 +38,7 @@ def predict():
         else:
             result = 'Low risk of heart attack'
 
-        return render_template('templets/result.html', prediction_text=result)
+        return render_template('result.html', prediction_text=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+</head>
+<body>
+    <h2>Heart Attack Prediction</h2>
+    <p>info = ["age","1: male, 0: female","chest pain type, 1: typical angina, 2: atypical angina, 3: non-anginal pain, 4: asymptomatic","resting blood pressure"," serum cholestoral in mg/dl","fasting blood sugar > 120 mg/dl","resting electrocardiographic results (values 0,1,2)"," maximum heart rate achieved","exercise induced angina","oldpeak = ST depression induced by exercise relative to rest","the slope of the peak exercise ST segment","number of major vessels (0-3) colored by flourosopy","thal: 3 = normal; 6 = fixed defect; 7 = reversable defect"]
+    <br>63,1,3,145,233,1,0,150,0,2.3,0,0,1,1
+    </p>
+    <form action="/predict" method="post">
+        <label for="model">Select Model:</label>
+        <select id="model" name="model">
+            <option value="logistic">Logistic Regression</option>
+            <option value="decision-tree">Decision Tree</option>
+            <option value="random-forest">random-forest</option>
+            <option value="gaussian-nb">gaussian-nb</option>
+        </select><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label for="sex">Sex (0: Female, 1: Male):</label>
+        <input type="number" id="sex" name="sex" required><br><br>
+        
+        <label for="cp">Chest Pain Type:</label>
+        <input type="number" id="cp" name="cp" required><br><br>
+
+        <label for="trestbps">Chest Pain Type:</label>
+        <input type="number" id="trestbps" name="trestbps" required><br><br>
+        
+        <label for="chol">Chest Pain Type:</label>
+        <input type="number" id="chol" name="chol" required><br><br>
+
+        <label for="fbs">Chest Pain Type:</label>
+        <input type="number" id="fbs" name="fbs" required><br><br>
+
+        <label for="restecg">Chest Pain Type:</label>
+        <input type="number" id="restecg" name="restecg" required><br><br>
+
+        <label for="thalach">Chest Pain Type:</label>
+        <input type="number" id="thalach" name="thalach" required><br><br>
+
+        <label for="exang">Chest Pain Type:</label>
+        <input type="number" id="exang" name="exang" required><br><br>
+
+        <label for="oldpeak">Chest Pain Type:</label>
+        <input type="number" id="oldpeak" name="oldpeak" required><br><br>
+
+        <label for="slope">Chest Pain Type:</label>
+        <input type="number" id="slope" name="slope" required><br><br>
+
+        <label for="ca">Chest Pain Type:</label>
+        <input type="number" id="ca" name="ca" required><br><br>
+
+        <label for="thal">Chest Pain Type:</label>
+        <input type="number" id="thal" name="thal" required><br><br>
+
+        
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

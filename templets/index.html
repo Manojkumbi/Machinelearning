@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+</head>
+<body>
+    <h2>Heart Attack Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        
+        <label for="sex">Sex (0: Female, 1: Male):</label>
+        <input type="number" id="sex" name="sex" required><br><br>
+        
+        <label for="cp">Chest Pain Type:</label>
+        <input type="number" id="cp" name="cp" required><br><br>
+        
+        <!-- Add more input fields for other features -->
+        
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

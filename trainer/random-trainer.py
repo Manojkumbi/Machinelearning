@@ -16,4 +16,4 @@ random_forest.fit(X_train, y_train)
 accuracy = random_forest.score(X_test, y_test)  # This calculates accuracy on the test set
 print("Accuracy:", accuracy)
 
-joblib.dump(random_forest, 'random-forest.pkl')
+joblib.dump(random_forest, 'random-forest-model.pkl')

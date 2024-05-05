@@ -16,6 +16,6 @@ gaussian_nb.fit(X_train, y_train)
 accuracy = gaussian_nb.score(X_test, y_test)
 print("Test Set Accuracy:", accuracy)
 
-joblib.dump(gaussian_nb, 'gaussian-nb.pkl')
+joblib.dump(gaussian_nb, 'gaussian-nb-model.pkl')
 
 print("Gaussian Naive Bayes model saved to 'gaussian-nb.pkl'")

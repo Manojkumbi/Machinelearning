@@ -24,4 +24,4 @@ model.fit(X_train_scaled, y_train)
 accuracy = model.score(X_test_scaled, y_test)
 print("Accuracy:", accuracy)
 
-joblib.dump(model, 'logistic_model.pkl')
+joblib.dump(model, 'logistic-model.pkl')

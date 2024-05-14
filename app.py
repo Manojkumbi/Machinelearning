@@ -5,13 +5,13 @@ import numpy as np
 app = Flask(__name__)
 
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    # Extract input features from the request
     if request.method == 'POST':
         model_name = request.form['model']
         model_path = f'model/{model_name}-model.pkl'
@@ -30,9 +30,17 @@ def predict():
         ca = float(request.form['ca'])
         thal = float(request.form['thal'])
 
-        input_features = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+        # Form the input feature array
+        input_features = np.array([
+            [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
+        ])
+
+        
+
+      
         prediction = model.predict(input_features)
 
+        # Determine the result based on the prediction
         if prediction[0] == 1:
             result = 'High risk of heart attack'
         else:
@@ -40,5 +48,6 @@ def predict():
 
         return render_template('result.html', prediction_text=result)
 
+# Start the Flask application
 if __name__ == '__main__':
     app.run(debug=True)
